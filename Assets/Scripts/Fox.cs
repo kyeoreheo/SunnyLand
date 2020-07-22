@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class Fox : MonoBehaviour
@@ -7,16 +8,14 @@ public class Fox : MonoBehaviour
     public Rigidbody2D myBody;
     public Animator myAnimator;
     public float speed;
+    public Text score;
+    private int currentScore = 0;
 
     private bool isOnFloor;
     private bool isHurt;
 
     private float timer;
     private bool isTimerCounting;
-
-    void Start()
-    {
-    }
 
     void Update()
     {
@@ -89,18 +88,14 @@ public class Fox : MonoBehaviour
             isTimerCounting = true;
             isHurt = true;
         }
-
-        //if (other.gameObject.tag == "Cherry")
-        //{
-        //    Destroy(other.gameObject);
-        //}
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "Cherry")
         {
-            Debug.Log("HERE");
+            currentScore++;
+            score.text = currentScore.ToString();
             Destroy(col.gameObject);
         }
     }
