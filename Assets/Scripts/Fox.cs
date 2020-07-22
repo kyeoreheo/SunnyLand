@@ -59,8 +59,6 @@ public class Fox : MonoBehaviour
         if (other.gameObject.tag == "Ground")
         {
             isOnFloor = true;
-       
-
         }
     }
 }
