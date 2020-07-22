@@ -17,6 +17,7 @@ public class Frog : MonoBehaviour
 
     private float timer;
     private bool isReadyToMove = false;
+    private bool isHurt = false;
 
     void Start()
     {
@@ -32,54 +33,69 @@ public class Frog : MonoBehaviour
             isReadyToMove = true;
         }
 
-        if (isReadyToMove)
+        if (!isHurt)
         {
-            if (!reachedLeftMost)
+            if (isReadyToMove)
             {
-                if (transform.position.x > leftMostPosition.x)
+                if (!reachedLeftMost)
                 {
-                    myBody.velocity = new Vector2(-speed, myBody.velocity.y);
-                    transform.eulerAngles = new Vector3(0, 0, 0);
-                    myAnimator.Play("Frog_Jump", 0);
+                    if (transform.position.x > leftMostPosition.x)
+                    {
+                        myBody.velocity = new Vector2(-speed, myBody.velocity.y);
+                        transform.eulerAngles = new Vector3(0, 0, 0);
+                        myAnimator.Play("Frog_Jump", 0);
+                    }
+                    else
+                    {
+                        reachedLeftMost = true;
+                        reachedRightMost = false;
+                        isReadyToMove = false;
+                        timer = 0.0f;
+                    }
                 }
-                else
-                {
-                    reachedLeftMost = true;
-                    reachedRightMost = false;
-                    isReadyToMove = false;
-                    timer = 0.0f;
-                }
-            }
 
-            if (!reachedRightMost)
-            {
-                if (transform.position.x < rightMostPosition.x)
+                if (!reachedRightMost)
                 {
-                    myBody.velocity = new Vector2(speed, myBody.velocity.y);
-                    transform.eulerAngles = new Vector3(0, 180, 0);
-                    myAnimator.Play("Frog_Jump", 0);
+                    if (transform.position.x < rightMostPosition.x)
+                    {
+                        myBody.velocity = new Vector2(speed, myBody.velocity.y);
+                        transform.eulerAngles = new Vector3(0, 180, 0);
+                        myAnimator.Play("Frog_Jump", 0);
+                    }
+                    else
+                    {
+                        reachedLeftMost = false;
+                        reachedRightMost = true;
+                        isReadyToMove = false;
+                        timer = 0.0f;
+                    }
                 }
-                else
-                {
-                    reachedLeftMost = false;
-                    reachedRightMost = true;
-                    isReadyToMove = false;
-                    timer = 0.0f;
-                }
-            }
-        }
-        else
-        {
-            if (reachedLeftMost)
-            {
-                transform.eulerAngles = new Vector3(0, 0, 0);
             }
             else
             {
-                transform.eulerAngles = new Vector3(0, 180, 0);
-            }
+                if (reachedLeftMost)
+                {
+                    transform.eulerAngles = new Vector3(0, 0, 0);
+                }
+                else
+                {
+                    transform.eulerAngles = new Vector3(0, 180, 0);
+                }
 
-            myAnimator.Play("Frog_Idle", 0);
+                myAnimator.Play("Frog_Idle", 0);
+            }
         }
+        else if (timer >= 1.0f)
+        {
+            Debug.Log("HERE");
+            Destroy(this.gameObject);
+        }
+    }
+
+    public void Hurt()
+    {
+        timer = 0.0f;
+        isHurt = true;
+        myAnimator.Play("Frog_Hurt", 0);
     }
 }
