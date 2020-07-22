@@ -6,16 +6,16 @@ public class Fox : MonoBehaviour
 {
     public Rigidbody2D myBody;
     public Animator myAnimator;
-    public bool isOnFloor;
-    public bool isHurt;
     public float speed;
 
-    public float timer;
+    private bool isOnFloor;
+    private bool isHurt;
+
+    private float timer;
     private bool isTimerCounting;
 
     void Start()
     {
-        Debug.Log("Hello :)");
     }
 
     void Update()
@@ -88,6 +88,20 @@ public class Fox : MonoBehaviour
         {
             isTimerCounting = true;
             isHurt = true;
+        }
+
+        //if (other.gameObject.tag == "Cherry")
+        //{
+        //    Destroy(other.gameObject);
+        //}
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Cherry")
+        {
+            Debug.Log("HERE");
+            Destroy(col.gameObject);
         }
     }
 }
