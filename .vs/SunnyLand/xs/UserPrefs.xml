@@ -1,8 +1,9 @@
 ﻿<Properties StartupConfiguration="{844E2AF7-313C-C7B4-2DE1-6DD9C8295EAD}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Fox.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Frog.cs">
     <Files>
-      <File FileName="Assets/Scripts/CameraMovement.cs" Line="7" Column="27" />
-      <File FileName="Assets/Scripts/Fox.cs" Line="62" Column="6" />
+      <File FileName="Assets/Scripts/CameraMovement.cs" Line="15" Column="1" />
+      <File FileName="Assets/Scripts/Fox.cs" Line="7" Column="1" />
+      <File FileName="Assets/Scripts/Frog.cs" Line="4" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -10,7 +11,7 @@
           <Node name="SunnyLand" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="Fox.cs" selected="True" />
+                <Node name="Frog.cs" selected="True" />
               </Node>
             </Node>
           </Node>
