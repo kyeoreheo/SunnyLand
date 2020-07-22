@@ -46,7 +46,7 @@ public class Fox : MonoBehaviour
 
         if (Input.GetKeyDown("space") && isOnFloor)
         {
-            myBody.velocity = Vector2.up * speed * 2;
+            myBody.velocity = Vector2.up * speed * 3;
             isOnFloor = false;
         }
 
