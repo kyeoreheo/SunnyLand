@@ -12,7 +12,6 @@ public class Frog : MonoBehaviour
     public Vector2 leftMostPosition;
     public Vector2 rightMostPosition;
 
-
     public bool reachedLeftMost = false;
     public bool reachedRightMost = true;
     // Start is called before the first frame update

@@ -67,12 +67,14 @@ public class Fox : MonoBehaviour
 
         if (Input.GetKeyDown("space") && isOnFloor && !isHurt)
         {
-            myBody.velocity = Vector2.up * speed * 3;
-            isOnFloor = false;
+            Jump();
         }
+    }
 
-        //var move = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
-        //transform.position += move * 1.0f * Time.deltaTime;
+    public void Jump()
+    {
+        myBody.velocity = Vector2.up * speed * 3;
+        isOnFloor = false;
     }
 
     void OnCollisionEnter2D(Collision2D other)

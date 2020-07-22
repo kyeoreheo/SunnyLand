@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\Fox.cs" />
+    <Compile Include="Assets\Scripts\FoxAttackArea.cs" />
     <Compile Include="Assets\Scripts\Frog.cs" />
     <Compile Include="Assets\Scripts\SecondLecture.cs" />
     <Reference Include="Unity.Timeline.Editor">
