@@ -87,7 +87,6 @@ public class Frog : MonoBehaviour
         }
         else if (timer >= 1.0f)
         {
-            Debug.Log("HERE");
             Destroy(this.gameObject);
         }
     }

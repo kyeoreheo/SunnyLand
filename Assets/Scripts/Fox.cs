@@ -17,6 +17,8 @@ public class Fox : MonoBehaviour
     private float timer;
     private bool isTimerCounting;
 
+    public bool isInFallingArea = false;
+
     void Update()
     {
         if (isTimerCounting)
@@ -97,6 +99,19 @@ public class Fox : MonoBehaviour
             currentScore++;
             score.text = currentScore.ToString();
             Destroy(col.gameObject);
+        }
+
+        if (col.gameObject.tag == "FallingArea")
+        {
+            isInFallingArea = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "FallingArea")
+        {
+            isInFallingArea = false;
         }
     }
 }
