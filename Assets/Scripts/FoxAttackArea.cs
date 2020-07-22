@@ -10,8 +10,8 @@ public class FoxAttackArea : MonoBehaviour
     {
         if (col.gameObject.tag == "Enemy")
         {
+            col.GetComponent<Frog>().Hurt();
             fox.Jump();
-            Destroy(col.gameObject);
         }
     }
 }
