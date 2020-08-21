@@ -1,9 +1,9 @@
 ﻿<Properties StartupConfiguration="{844E2AF7-313C-C7B4-2DE1-6DD9C8295EAD}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Frog.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Fox.cs">
     <Files>
       <File FileName="Assets/Scripts/CameraMovement.cs" Line="25" Column="52" />
-      <File FileName="Assets/Scripts/Fox.cs" />
-      <File FileName="Assets/Scripts/Frog.cs" Line="38" Column="29" />
+      <File FileName="Assets/Scripts/Fox.cs" Line="14" Column="28" />
+      <File FileName="Assets/Scripts/Frog.cs" Line="9" Column="24" />
       <File FileName="Assets/Scripts/FoxAttackArea.cs" />
     </Files>
     <Pads>
@@ -16,7 +16,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="604211cc-34d0-4c60-b5d9-1afcd82097dd" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="a2b42e23-9aba-4303-b3f2-47fa44add522" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
